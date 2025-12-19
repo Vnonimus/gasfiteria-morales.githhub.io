@@ -1,0 +1,229 @@
+/* Tailwind v4 no longer needs @custom-variant; dark styles are applied via the .dark selector below */
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+@layer base {
+  /* Eliminar el anillo global para evitar líneas grises en todos los elementos */
+  * {
+    border-color: var(--border);
+  }
+
+  /* Anillo de foco accesible SOLO en elementos interactivos */
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--ring) 60%, transparent);
+    outline-offset: 2px;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+/* ====== RESPONSIVE (móvil) ====== */
+@media (max-width: 768px){
+  /* Header: se apila */
+  .topbar{
+    height: auto;
+    padding: 14px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-whatsapp{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hero: menos padding y texto más chico */
+  .hero{
+    padding: 40px 16px;
+    min-height: calc(100vh - 120px);
+  }
+
+  .hero-content{
+    padding: 0;
+  }
+
+  /* Botones: uno debajo del otro */
+  .actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary, .btn-outline{
+    width: 100%;
+  }
+
+  /* Badges: se acomodan */
+  .badges{
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce,
+  .animate-spin,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* Respetar el safe area en móviles (iPhone notch, etc.) */
+.bottom-safe {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+
+/* Fluid typography scale and unified section spacing */
+:root {
+  --fluid-step--2: clamp(0.75rem, 0.70rem + 0.20vw, 0.85rem);
+  --fluid-step--1: clamp(0.875rem, 0.82rem + 0.25vw, 0.95rem);
+  --fluid-step-0: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
+  --fluid-step-1: clamp(1.25rem, 1.10rem + 0.80vw, 1.50rem);
+  --fluid-step-2: clamp(1.50rem, 1.30rem + 1.20vw, 2.00rem);
+  --fluid-step-3: clamp(1.875rem, 1.60rem + 1.80vw, 2.50rem);
+  --fluid-step-4: clamp(2.25rem, 1.90rem + 2.40vw, 3.00rem);
+}
+
+.fluid-h1 { font-size: var(--fluid-step-3); line-height: 1.20; letter-spacing: -0.015em; }
+.fluid-h2 { font-size: var(--fluid-step-2); line-height: 1.25; letter-spacing: -0.010em; }
+.fluid-h3 { font-size: var(--fluid-step-1); line-height: 1.30; }
+.fluid-body { font-size: var(--fluid-step-0); line-height: 1.60; }
+.fluid-small { font-size: var(--fluid-step--1); line-height: 1.60; }
+
+.section { padding-block: clamp(3rem, 2rem + 2vw, 5rem); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce,
+  .animate-spin,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
