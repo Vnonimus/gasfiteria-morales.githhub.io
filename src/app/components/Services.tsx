@@ -1,4 +1,5 @@
-import { Flame, Droplets, Wrench, ShieldCheck, CircleCheck } from 'lucide-react';
+import { Flame, Droplets, Wrench, ShieldCheck, CircleCheck, Radio, Zap } from 'lucide-react';
+import { getWhatsAppUrl } from '../utils/getWhatsAppUrl';
 
 const services = [
   {
@@ -7,7 +8,23 @@ const services = [
     description: 'Instalación profesional de calefones y termos eléctricos con certificación SEC. Trabajos garantizados y seguros.',
     color: 'text-orange-500',
     bgColor: 'bg-orange-50',
-    image: 'https://images.unsplash.com/photo-1661348540993-9b1a4fcb4ad5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlciUyMGhlYXRlciUyMGluc3RhbGxhdGlvbnxlbnwxfHx8fDE3NjYwMjYyMDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    image: 'calefon.webp'
+  },
+    {
+    icon: Zap,
+    title: 'Mantencion y Reparacion de Termos Electricos',
+    description: 'Servicio especaializado en mantencion preventiva y reparacion de termos electricos. Diagnostico profesional y soliciones rapidas.',
+    color: 'text-yellow-500',
+    bgColor: 'bg-yellow-50',  
+    image: 'Reparacion.jpeg'
+  },
+    {
+    icon: Radio,
+    title: 'Busqueda de Fugas con Tecnologia de Punta',
+    description: 'Deteccion precisa de fugas de agua y gas mediante Gas Trazador(inyeccion de gas inerte para localizar fugas invisibles) y Geofono(equipo acustico que detecta el sonido de fugas subterraneas). Tecnologia profesional sin excavaciones innecesarias.',
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-50',
+    image: 'Fuga.jpeg'
   },
   {
     icon: Droplets,
@@ -90,7 +107,7 @@ export function Services() {
 
                   {/* CTA button */}
                   <button 
-                    onClick={() => window.open('https://wa.me/56979604475', '_blank')}
+                    onClick={() => window.open(getWhatsAppUrl(), '_blank')}
                     className="mt-3 sm:mt-4 text-blue-600 hover:text-blue-700 flex items-center gap-2 group/btn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
                     aria-label={`Solicitar cotización de ${service.title}`}
                   >

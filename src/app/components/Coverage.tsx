@@ -1,4 +1,5 @@
 import { MapPin, Clock, CheckCircle } from 'lucide-react';
+import { getWhatsAppUrl } from '../utils/getWhatsAppUrl';
 
 const coverageAreas = [
   'Las Condes',
@@ -35,9 +36,11 @@ export function Coverage() {
           <div className="flex items-center justify-center mb-3 sm:mb-4">
             <MapPin className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600" />
           </div>
-          <h2 className="mb-3 sm:mb-4 text-gray-900 font-semibold fluid-h2">Cobertura en Santiago</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto fluid-body">
-            Atención en todas las comunas de Santiago y alrededores.
+          <h2 className="mb-3 sm:mb-4 text-gray-900 font-semibold fluid-h2">Gasfitería en Santiago</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto fluid-body">
+            Servicios de gasfitería en Santiago: instalación de calefón y termos, reparación de fugas,
+            destapes y redes bajo normativa SEC. Atendemos comunas como Las Condes, Providencia, Ñuñoa,
+            La Florida, Maipú, Pudahuel, Estación Central, Santiago Centro y más.
           </p>
         </div>
 
@@ -79,7 +82,7 @@ export function Coverage() {
                 </div>
                 <div>
                   <h4 className="text-gray-900 text-base sm:text-lg font-semibold">Horario</h4>
-                  <p className="text-gray-600 text-xs sm:text-sm">Lun - Sáb</p>
+                  <p className="text-gray-600 text-xs sm:text-sm">Todos los días</p>
                 </div>
               </div>
               <p className="text-gray-700 text-sm sm:text-base">
@@ -96,7 +99,7 @@ export function Coverage() {
                 ¿Necesitas un gasfitero ahora? Contáctanos y te atenderemos lo más pronto posible
               </p>
               <button
-                onClick={() => window.open('https://wa.me/56979604475', '_blank')}
+                onClick={() => window.open(getWhatsAppUrl(), '_blank')}
                 className="w-full bg-white text-blue-600 py-2.5 sm:py-3 rounded-lg hover:bg-blue-50 transition-colors"
               >
                 Contactar Ahora

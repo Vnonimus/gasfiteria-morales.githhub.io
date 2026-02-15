@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, ShieldCheck } from 'lucide-react';
+import { getWhatsAppUrl } from '../utils/getWhatsAppUrl';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,7 +36,7 @@ export function Footer() {
               </li>
               <li>
                 <a 
-                  href="https://wa.me/56979604475"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
@@ -80,7 +81,7 @@ export function Footer() {
             </div>
             <div className="mt-6">
               <p className="text-gray-400 text-sm mb-2">Horario de atención:</p>
-              <p className="text-gray-300">Lun - Sáb: 08:00 - 20:00</p>
+              <p className="text-gray-300">Toda la semana: 08:00 - 20:00</p>
             </div>
           </div>
         </div>
@@ -100,7 +101,7 @@ export function Footer() {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/56979604475"
+        href={getWhatsAppUrl()}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bottom-safe bg-[#25D366] hover:bg-[#20BA5A] text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl hover:shadow-3xl transition-all duration-300 z-50 animate-bounce hover:animate-none focus:outline-none focus:ring-2 focus:ring-white/60"

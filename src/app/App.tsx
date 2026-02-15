@@ -1,4 +1,5 @@
 import { Header } from './components/Header';
+import { FloatingSocials } from './components/FloatingSocials';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { Testimonials } from './components/Testimonials';
@@ -12,6 +13,7 @@ export default function App() {
       <a href="#contenido-principal" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg">Saltar al contenido</a>
 
       <Header />
+      <FloatingSocials />
       <main id="contenido-principal" role="main">
         <Hero />
         <Services />
