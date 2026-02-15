@@ -6,22 +6,25 @@ export function Header() {
     window.open(getWhatsAppUrl(), '_blank');
   };
 
+  const logoSrc = `${import.meta.env.BASE_URL}Logo%20gasfitero.svg.png`;
+  const fallbackFavicon = `${import.meta.env.BASE_URL}favicon.svg`;
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 gap-3">
           {/* Logo */}
           <div className="flex items-center min-w-0">
-<img
-  src="/Logo%20gasfitero.svg.png"
-  alt="Logotipo Gasfitería"
-  className="w-10 h-10 sm:w-12 sm:h-12 mr-3 flex-shrink-0"
-  onError={(e) => {
-    const t = e.currentTarget as HTMLImageElement
-    t.onerror = null
-    t.src = '/favicon.svg'
-  }}
-/>
+            <img
+              src={logoSrc}
+              alt="Logotipo Gasfitería"
+              className="w-10 h-10 sm:w-12 sm:h-12 mr-3 flex-shrink-0"
+              onError={(e) => {
+                const t = e.currentTarget as HTMLImageElement;
+                t.onerror = null;
+                t.src = fallbackFavicon;
+              }}
+            />
             <div className="text-left">
               <p className="text-blue-600 font-semibold truncate fluid-h3">Gasfitería Full Santiago</p>
               <p className="text-gray-600 fluid-small">César Morales - Instalador SEC</p>

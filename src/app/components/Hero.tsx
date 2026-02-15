@@ -6,6 +6,8 @@ export function Hero() {
     window.open(getWhatsAppUrl(), '_blank');
   };
 
+  const secSealSrc = `${import.meta.env.BASE_URL}sec.png`;
+
   return (
     <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -24,15 +26,16 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="flex items-center justify-center mb-6">
           <img
-            src="/sec.png"
+            src={secSealSrc}
             alt="Sello Certificación SEC"
             className="h-48 sm:h-64 object-contain filter drop-shadow-2xl hover:scale-105 transition-transform duration-300"
             onError={(e) => {
-              // Si no encuentra la imagen local, usa el logo oficial azul como respaldo
               const target = e.currentTarget;
               if (target.src.includes('sec.png')) {
-                 target.src = "https://www.sec.cl/sitio-web/wp-content/themes/sec_theme/assets/img/logo_sec_header.png";
-                 target.className = "h-24 sm:h-32 object-contain filter drop-shadow-lg bg-white/10 rounded-lg p-2 backdrop-blur-sm";
+                target.src =
+                  'https://www.sec.cl/sitio-web/wp-content/themes/sec_theme/assets/img/logo_sec_header.png';
+                target.className =
+                  'h-24 sm:h-32 object-contain filter drop-shadow-lg bg-white/10 rounded-lg p-2 backdrop-blur-sm';
               }
             }}
           />
